@@ -1,0 +1,11 @@
+"use strict";
+exports.__esModule = true;
+var Carro_1 = require("./Carro");
+var carro = new Carro_1.Carro;
+carro.setcor("Preto Fosco");
+carro.setcambio("Automático");
+carro.setmarca("Land Rover");
+carro.setrodas("Quatro Rodas brilhantes");
+carro.freiar();
+carro.trocarDeMarcha();
+console.log(carro);
