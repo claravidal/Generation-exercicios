@@ -1,0 +1,16 @@
+.alinhar {
+    text-align: center
+}
+.faixa{
+    background-color: pink;
+    padding:10px;
+    width:400px;
+}
+.faixapreta{
+    background-color:black;
+    padding:10px;
+    }
+body{
+    margin-left: 30%;
+    margin-right: 30%;
+}

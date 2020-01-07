@@ -1,0 +1,102 @@
+    <!-- Esse é um exercicio para fazer uma lista para arrastar as informações para dentro de uma div e colocar imagens nela. -->
+
+<!DOCTYPE HTML>
+<html>
+    
+<head>
+    <style>
+        #div1 {
+            width: 400px;
+            height: 150px;
+            padding: 10px;
+            border: 3px solid #aaaaaa;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        body{
+            text-align: center;
+        }
+    </style>
+    <script>
+
+        //Evento permite que voce solte o elemento Html
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        
+        //Evento disparado ao arrastar o Elemento Html
+        function drag(ev) {
+            ev
+                .dataTransfer
+                .setData("text", ev.target.id);
+
+            ev
+                .currentTarget
+                .style
+                .backgroundColor = 'yellow';
+        }
+
+
+        //Evento Responsavel por recepcionar o Elemento Html
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+
+        }
+    </script>
+</head>
+
+<body ondrop="drop(event)" ondragover="allowDrop(event)">
+
+    <h1>Free Time vs Obligation</h1>
+    <br>
+
+    <h2>Free Time!</h2>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br>
+    <h2>Obligation!</h2>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br>
+
+    <div id="drag1" draggable="true" ondragstart="drag(event)">
+        <img src="check.png"  width="20" height="20"> <b>Comer</b>  </div>
+    <br>
+
+    <div id="drag2" draggable="true" ondragstart="drag(event)">
+        <img src="check.png"  width="20" height="20"> <b>Assistir série</b></div>
+    <br>
+
+    <div id="drag3" draggable="true" ondragstart="drag(event)">
+        <img src="check.png"  width="20" height="20"> <b>Lavar as camisetas da Generation</b></div>
+    <br>
+
+    <div id="drag4" draggable="true" ondragstart="drag(event)">
+        <img src="check.png"  width="20" height="20"> <b>Carregar bilhete único</b></div>
+    <br>
+
+    <div id="drag5" draggable="true" ondragstart="drag(event)">
+        <img src="check.png"  width="20" height="20"> <b>Tomar água</b></div>
+    <br>
+
+    <div id="drag6" draggable="true" ondragstart="drag(event)">
+        <img src="check.png"  width="20" height="20"><b>Jogar videogame</b></div>
+    <br>
+    <div id="drag7" draggable="true" ondragstart="drag(event)">
+        <img src="check.png"  width="20" height="20"><b>Estudar</b></div>
+    <br>
+
+    <div id="drag8" draggable="true" ondragstart="drag(event)">
+        <img src="check.png"  width="20" height="20"><b>Ouvir música</b></div>
+    <br>
+
+    <div id="drag9" draggable="true" ondragstart="drag(event)">
+        <img src="check.png"  width="20" height="20"><b>Fazer comida</b></div>
+    <br>
+
+    <div id="drag10" draggable="true" ondragstart="drag(event)">
+        <img src="check.png"  width="20" height="20"><b>Pagar as contas</b></div>
+    <br>
+</html> 
