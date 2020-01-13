@@ -1,0 +1,17 @@
+<table border = "1px">
+    <tr>
+        <th>Post Id</th>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Comentário</th>
+    </tr>
+    <tr *ngFor = "let item of comment"> 
+        <td>{{item.postId}} </td>
+        <td>{{item.id}} </td>
+        <td>{{item.name}} </td>
+        <td>{{item.email}} </td>
+        <td>{{item.body}} </td>
+    </tr>
+
+</table>
