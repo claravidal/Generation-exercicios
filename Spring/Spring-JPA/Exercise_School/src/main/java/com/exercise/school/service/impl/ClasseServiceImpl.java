@@ -45,6 +45,6 @@ public class ClasseServiceImpl implements ClasseService {
 
 	@Override
 	public Classe getByName(String name) {
-		return this.repository.findShiftByName(name);
+		return this.repository.findClasseByName(name);
 	}
 }

@@ -1,7 +1,6 @@
 package com.exercise.school.service;
 
 import java.util.List;
-
 import com.exercise.school.entity.Student;
 
 public interface StudentService {

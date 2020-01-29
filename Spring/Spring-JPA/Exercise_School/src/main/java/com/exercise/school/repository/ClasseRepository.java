@@ -8,7 +8,7 @@ import com.exercise.school.entity.Classe;
 
 
 public interface ClasseRepository extends CrudRepository <Classe , Integer> {
-	Classe findShiftByName(String name);
+	Classe findClasseByName(String name);
 
 	List<Classe> findAllByName(String name);
 	

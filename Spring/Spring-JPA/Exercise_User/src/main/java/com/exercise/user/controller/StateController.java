@@ -1,4 +1,4 @@
-package com.exercise.school.controller;
+package com.exercise.user.controller;
 
 import java.util.List;
 
@@ -13,39 +13,39 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.exercise.school.entity.Classe;
-import com.exercise.school.entity.Student;
-import com.exercise.school.service.ClasseService;
+import com.exercise.user.entity.State;
+import com.exercise.user.service.StateService;
+
 
 @RestController
 @CrossOrigin("*")
 
-public class ClasseController {
-	
+public class StateController {
+
 	@Autowired
-	private ClasseService service;
+	private StateService service;
 	
-	@PostMapping("/classe")
-	public ResponseEntity<Classe> post(@RequestBody Classe entity){
+	@PostMapping("/state")
+	public ResponseEntity<State> post(@RequestBody State entity){
 		try {
-			Classe classeSave = this.service.insertOrUpdate(entity);
-			return ResponseEntity.ok(classeSave);
+			State stateSave = this.service.insertOrUpdate(entity);
+			return ResponseEntity.ok(stateSave);
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().body(null );
 		}
 	}
 	
-	@PutMapping("/classe")
-	public ResponseEntity<Classe> put(@RequestBody Classe entity){
+	@PutMapping("/state")
+	public ResponseEntity<State> put(@RequestBody State entity){
 		try {
-			Classe classeSave = this.service.insertOrUpdate(entity);
-			return ResponseEntity.ok(classeSave);
+			State stateSave = this.service.insertOrUpdate(entity);
+			return ResponseEntity.ok(stateSave);
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().body(null);
 		}
 	}
 	
-	@DeleteMapping("/classe/{id}")
+	@DeleteMapping("/state/{id}")
 	
 	public ResponseEntity<String> delete(@PathVariable int id){
 		if(this.service.getById(id) == null) {
@@ -60,28 +60,28 @@ public class ClasseController {
 		}
 	}
 	
-	@GetMapping("/classe/{id}")
-	public ResponseEntity<Classe> getById(@PathVariable int id){
-		Classe classe = this.service.getById(id);
+	@GetMapping("/state/{id}")
+	public ResponseEntity<State> getById(@PathVariable int id){
+		State state = this.service.getById(id);
 		
-		if(classe == null)
+		if(state == null)
 			return ResponseEntity.notFound().build();
 		
-		return ResponseEntity.ok(classe);
+		return ResponseEntity.ok(state);
 	}
 	
-	@GetMapping("/classe")
-	public ResponseEntity<List<Classe>> getAll(){
+	@GetMapping("/state")
+	public ResponseEntity<List<State>> getAll(){
 		return ResponseEntity.ok(this.service.getAll());
 	}
 	
-	@GetMapping("/classe/names/{name}")
-	public ResponseEntity<List<Classe>> getAllByName(@PathVariable String name){
+	@GetMapping("/state/names/{name}")
+	public ResponseEntity<List<State>> getAllByName(@PathVariable String name){
 		return ResponseEntity.ok(this.service.getAllByName(name));
 	}
 	
-	@GetMapping("/classe/name/{name}")
-	public ResponseEntity<Classe> getByName(@PathVariable String name){
+	@GetMapping("/state/name/{name}")
+	public ResponseEntity<State> getByName(@PathVariable String name){
 		return ResponseEntity.ok(this.service.getByName(name));
 	}
 	
