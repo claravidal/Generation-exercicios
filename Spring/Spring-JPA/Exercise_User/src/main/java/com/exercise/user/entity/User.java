@@ -5,6 +5,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 public class User {
 	@Id
@@ -16,6 +18,7 @@ public class User {
 	private String password;
 	
 	@ManyToOne
+	@JsonIgnoreProperties("user")
 	private State state;
 	
 	
